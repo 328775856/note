@@ -1,0 +1,44 @@
+1、cd 文件夹名称                                                             | 选择文件夹
+2、git init                                                                  | 文件建库
+3、git add 文件名/add -A(提交全部)   （touch 文件名（创建之后add也可以））   | 可以新建文件
+4、git commit -m “提交信息”   弹出窗口按i插入提交信息  esc保存   ：wq退出  |提交
+5、git remote add origin（名字一半填origin） url（github对应库网址）         |连接gihub库
+6、git pull --rebase origin master（因为本地库没有README.MD，下载到本地)     |下载md文件
+7、git push -u/--all                                                          |上传同步
+***可能还需要git config --global user.name “”和git config --global user.email “”
+
+
+资料：http://blog.jobbole.com/78960/     
+      http://blog.csdn.net/u010098331/article/details/53505626
+      https://segmentfault.com/a/1190000004317077?_ea=567391
+   1、fatal: refusing to merge unrelated histories解决办法git pull origin master --allow-unrelated-histories
+
+创建本地数据仓库，执行以下命令(同样要在项目目录中)
+
+    git init
+
+    touch README.md
+
+    git add  README.md
+
+    git commit -m "first commit"
+
+    git remote add origin git@xxx.xxx.xxx.xxxx:sn/weight.git
+
+    git push -u origin master
+
+解释输入的命令:
+
+    1、在当前目录下生成.git目录，该目录为仓库；而当前目录为工作空间。
+
+    2、生成README.md文件,是关于工程代码的介绍，类似与使用说明书。
+
+    3、将README.md添加到索引库中。
+
+    4、将修改提交到本地仓库中，并写上备注"first commit"
+
+    5、添加一个新的远程仓库origin，远程服务器IP为：192.168.1.20
+
+    6、将本地文件推送到远程仓库origin的分支master中。
+
+ 注意： ip地址等信息，自行替换一下。
