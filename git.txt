@@ -6,7 +6,7 @@
 6、git pull --rebase origin master（因为本地库没有README.MD，下载到本地)     |下载md文件
 7、git push -u/--all                                                          |上传同步
 ***可能还需要git config --global user.name “”和git config --global user.email “”
-
+框架：bootstrap， easy-ui。
 
 资料：http://blog.jobbole.com/78960/     
       http://blog.csdn.net/u010098331/article/details/53505626
