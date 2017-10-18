@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>用户注册登录界面</title>
+	<!-- <link rel="stylesheet" type="text/css" href="css/normalize.css" /> -->
+	
+	<link rel="stylesheet" href="username/css/materialize.css">
+	<style type="text/css">
+	#login-page{ width:400px;margin:0px auto;}
+	</style>
+    
+	
+</head>
+<body >
+	<div id="login-page" class="row">
+	    <div class="col s12 z-depth-6 card-panel">
+	      <form class="login-form">
+	        <div class="row">
+	          <div class="input-field col s12 center">
+	            
+	            <p class="center login-form-text">用户登录</p>
+	            
+	          </div>
+	        </div>
+
+	      <form >
+	       
+	        <div class="row margin">
+	          <div class="input-field col s12">
+	            <i class="mdi-social-person-outline prefix"></i>
+	            <input id="username" name="username" type="text">
+	            <label for="text"  >用户名</label>
+	          </div>
+	        </div>
+	        <div class="row margin">
+	          <div class="input-field col s12">
+	            <i class="mdi-action-lock-outline prefix"></i>
+	            <input id="password" name="password" type="password">
+	            <label for="password">密码</label>
+	          </div>
+	        </div>
+	        <div class="row">          
+	          <div class="input-field col s12 m12 l12  login-text">
+	              <input type="checkbox" id="remember-me" />
+	              <label for="remember-me">记住我</label>
+	          </div>
+	        </div>
+	        <div class="row">
+	          <div class="input-field col s12">
+	            <button class="btn waves-effect waves-light col s12" type="button" value="登录" onClick="sendRequest()">登陆</button>
+	          </div>
+
+	         
+
+	        </div>
+	        <div class="row">
+	          <div class="input-field col s6 m6 l6">
+	            <p class="margin medium-small"><a href="register_zc.html">现在注册!</a></p>
+	          </div>
+	          <div class="input-field col s6 m6 l6">
+	              <p class="margin right-align medium-small"><a href="forgot-password.html">忘记密码?</a></p>
+	          </div>          
+          <div id="msg"></div>
+	      </form>
+	    </div>
+	  </div>
+
+	  </div>
+	  
+	   
+	<script type="text/javascript" src="username/js/jquery.js"></script>
+	<script src="username/js/materialize.js"></script>
+	<script type="text/javascript">
+     function sendRequest(){
+	   var username = document.getElementById("username").value;
+	   var password = document.getElementById("password").value;
+	   if(username==""){
+		   alert("用户不能为空。");
+		  return false;   
+	   }
+	   if(password==""){
+		   alert("密码不能为空。");
+		  return false;   
+	   }
+	   var msg=document.getElementById("msg");
+	   //创建异步请求对象
+	   var xmlhttp = new XMLHttpRequest();
+	   //打开连接
+	   xmlhttp.open("POST","username/shujuku/denglu.php",true);
+	   //为状态改变事件绑定处理函数
+	   xmlhttp.onreadystatechange=function(){
+		  if(xmlhttp.readyState==4){
+			 if(xmlhttp.status==200){
+				 
+				 //获取服务器返回的数据。
+				var t=xmlhttp.responseText;
+			
+				if(t==true){
+				   location.href='index.html';
+
+				}else{
+				   msg.innerHTML="用户名密码错误";	
+				}
+			 }else{
+				msg.innerHTML="处理失败。"+xmlhttp.status ;
+			 }
+		  }else{
+			  msg.innerHTML="正在处理。。。。"
+		  }
+	   }
+	   //post请求必须设置的请求头部。
+	   xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+
+	   //发送请求数据到服务器
+	   xmlhttp.send("username="+username+"&userpwd="+password);
+	   
+   }
+
+    
+    </script>
+</body>
+</html>
