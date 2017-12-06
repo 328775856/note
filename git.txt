@@ -1,19 +1,19 @@
-1¡¢cd ÎÄ¼ş¼ĞÃû³Æ                                                             | Ñ¡ÔñÎÄ¼ş¼Ğ
-2¡¢git init                                                                  | ÎÄ¼ş½¨¿â
-3¡¢git add ÎÄ¼şÃû/add -A(Ìá½»È«²¿)   £¨touch ÎÄ¼şÃû£¨´´½¨Ö®ºóaddÒ²¿ÉÒÔ£©£©   | ¿ÉÒÔĞÂ½¨ÎÄ¼ş
-4¡¢git commit -m ¡°Ìá½»ĞÅÏ¢¡±   µ¯³ö´°¿Ú°´i²åÈëÌá½»ĞÅÏ¢  esc±£´æ   £ºwqÍË³ö  |Ìá½»
-5¡¢git remote add origin£¨Ãû×ÖÒ»°ëÌîorigin£© url£¨github¶ÔÓ¦¿âÍøÖ·£©         |Á¬½Ógihub¿â
-6¡¢git pull --rebase origin master£¨ÒòÎª±¾µØ¿âÃ»ÓĞREADME.MD£¬ÏÂÔØµ½±¾µØ)     |ÏÂÔØmdÎÄ¼ş
-7¡¢git push -u/--all                                                          |ÉÏ´«Í¬²½
-***¿ÉÄÜ»¹ĞèÒªgit config --global user.name ¡°¡±ºÍgit config --global user.email ¡°¡±
-¿ò¼Ü£ºbootstrap£¬ easy-ui¡£
+1ã€cd æ–‡ä»¶å¤¹åç§°                                                             | é€‰æ‹©æ–‡ä»¶å¤¹
+2ã€git init                                                                  | æ–‡ä»¶å»ºåº“
+3ã€git add æ–‡ä»¶å/add -A(æäº¤å…¨éƒ¨)   ï¼ˆtouch æ–‡ä»¶åï¼ˆåˆ›å»ºä¹‹åaddä¹Ÿå¯ä»¥ï¼‰ï¼‰   | å¯ä»¥æ–°å»ºæ–‡ä»¶
+4ã€git commit -m â€œæäº¤ä¿¡æ¯â€   å¼¹å‡ºçª—å£æŒ‰iæ’å…¥æäº¤ä¿¡æ¯  escä¿å­˜   ï¼šwqé€€å‡º  |æäº¤
+5ã€git remote add originï¼ˆåå­—ä¸€åŠå¡«originï¼‰ urlï¼ˆgithubå¯¹åº”åº“ç½‘å€ï¼‰         |è¿æ¥gihubåº“
+6ã€git pull --rebase origin masterï¼ˆå› ä¸ºæœ¬åœ°åº“æ²¡æœ‰README.MDï¼Œä¸‹è½½åˆ°æœ¬åœ°)     |ä¸‹è½½mdæ–‡ä»¶
+7ã€git push -u/--all                                                          |ä¸Šä¼ åŒæ­¥
+***å¯èƒ½è¿˜éœ€è¦git config --global user.name â€œâ€å’Œgit config --global user.email â€œâ€
+æ¡†æ¶ï¼šbootstrapï¼Œ easy-uiã€‚
 
-×ÊÁÏ£ºhttp://blog.jobbole.com/78960/     
+èµ„æ–™ï¼šhttp://blog.jobbole.com/78960/     
       http://blog.csdn.net/u010098331/article/details/53505626
       https://segmentfault.com/a/1190000004317077?_ea=567391
-   1¡¢fatal: refusing to merge unrelated histories½â¾ö°ì·¨git pull origin master --allow-unrelated-histories
+   1ã€fatal: refusing to merge unrelated historiesè§£å†³åŠæ³•git pull origin master --allow-unrelated-histories
 
-´´½¨±¾µØÊı¾İ²Ö¿â£¬Ö´ĞĞÒÔÏÂÃüÁî(Í¬ÑùÒªÔÚÏîÄ¿Ä¿Â¼ÖĞ)
+åˆ›å»ºæœ¬åœ°æ•°æ®ä»“åº“ï¼Œæ‰§è¡Œä»¥ä¸‹å‘½ä»¤(åŒæ ·è¦åœ¨é¡¹ç›®ç›®å½•ä¸­)
 
     git init
 
@@ -27,18 +27,21 @@
 
     git push -u origin master
 
-½âÊÍÊäÈëµÄÃüÁî:
+è§£é‡Šè¾“å…¥çš„å‘½ä»¤:
 
-    1¡¢ÔÚµ±Ç°Ä¿Â¼ÏÂÉú³É.gitÄ¿Â¼£¬¸ÃÄ¿Â¼Îª²Ö¿â£»¶øµ±Ç°Ä¿Â¼Îª¹¤×÷¿Õ¼ä¡£
+    1ã€åœ¨å½“å‰ç›®å½•ä¸‹ç”Ÿæˆ.gitç›®å½•ï¼Œè¯¥ç›®å½•ä¸ºä»“åº“ï¼›è€Œå½“å‰ç›®å½•ä¸ºå·¥ä½œç©ºé—´ã€‚
 
-    2¡¢Éú³ÉREADME.mdÎÄ¼ş,ÊÇ¹ØÓÚ¹¤³Ì´úÂëµÄ½éÉÜ£¬ÀàËÆÓëÊ¹ÓÃËµÃ÷Êé¡£
+    2ã€ç”ŸæˆREADME.mdæ–‡ä»¶,æ˜¯å…³äºå·¥ç¨‹ä»£ç çš„ä»‹ç»ï¼Œç±»ä¼¼ä¸ä½¿ç”¨è¯´æ˜ä¹¦ã€‚
 
-    3¡¢½«README.mdÌí¼Óµ½Ë÷Òı¿âÖĞ¡£
+    3ã€å°†README.mdæ·»åŠ åˆ°ç´¢å¼•åº“ä¸­ã€‚
 
-    4¡¢½«ĞŞ¸ÄÌá½»µ½±¾µØ²Ö¿âÖĞ£¬²¢Ğ´ÉÏ±¸×¢"first commit"
+    4ã€å°†ä¿®æ”¹æäº¤åˆ°æœ¬åœ°ä»“åº“ä¸­ï¼Œå¹¶å†™ä¸Šå¤‡æ³¨"first commit"
 
-    5¡¢Ìí¼ÓÒ»¸öĞÂµÄÔ¶³Ì²Ö¿âorigin£¬Ô¶³Ì·şÎñÆ÷IPÎª£º192.168.1.20
+    5ã€æ·»åŠ ä¸€ä¸ªæ–°çš„è¿œç¨‹ä»“åº“originï¼Œè¿œç¨‹æœåŠ¡å™¨IPä¸ºï¼š192.168.1.20
 
-    6¡¢½«±¾µØÎÄ¼şÍÆËÍµ½Ô¶³Ì²Ö¿âoriginµÄ·ÖÖ§masterÖĞ¡£
+    6ã€å°†æœ¬åœ°æ–‡ä»¶æ¨é€åˆ°è¿œç¨‹ä»“åº“originçš„åˆ†æ”¯masterä¸­ã€‚
 
- ×¢Òâ£º ipµØÖ·µÈĞÅÏ¢£¬×ÔĞĞÌæ»»Ò»ÏÂ¡£
+ æ³¨æ„ï¼š ipåœ°å€ç­‰ä¿¡æ¯ï¼Œè‡ªè¡Œæ›¿æ¢ä¸€ä¸‹ã€‚
+ 
+ å¾®ä¿¡å°ç¨‹åºï¼šsuns2@163.com   Wms100810.
+ å¾®ä¿¡å…¬ä¼—å·ï¼šnick328775856@gmail.com   Wms100810.
