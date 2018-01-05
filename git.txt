@@ -1,4 +1,4 @@
-1、cd 文件夹名称                                                             | 选择文件夹
+1、cd 文件夹名称                                                             | 选择文件夹
 2、git init                                                                  | 文件建库
 3、git add 文件名/add -A(提交全部)   （touch 文件名（创建之后add也可以））   | 可以新建文件
 4、git commit -m “提交信息”   弹出窗口按i插入提交信息  esc保存   ：wq退出  |提交
@@ -43,9 +43,10 @@
 
  注意： ip地址等信息，自行替换一下。
  
- 微信小程序：suns2@163.com   Wms100810.
- 微信公众号：nick328775856@gmail.com   Wms100810.
+ 微信小程序：suns2@163.com   mm
+ 微信公众号：nick328775856@gmail.com   mm
  2367388358 wdmm100810
- 3437794558 Wms100810.
+ 3437794558 mm
  Nickapp  wx33d9f3ae6e87d0e6
  百度地图AK  ooGvQFcbMC0pOLSQIurkiN9eWv4TS4tF
+ 百度云     nicksun666
