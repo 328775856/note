@@ -1,0 +1,67 @@
+项目Z     新建模块文件夹A  数据库新建表B  网页管理后台-菜单管理-新增-记住新增编号D			
+
+新建模块流程：			-->项目Z新建模块文件夹A	将travel或者shop中pom.xml .iml文件复制放入A中并将.iml前改为A的名称
+				-->将gen中template中menu.sql中url对应的value和list.html中js/后的值改为A的名称
+				-->进入数据库新建表B
+                    		-->进入网页管理后台-系统管理-代码生成器-找到B勾选点击生成代码-下载完成解压
+				-->进入网页管理后台-菜单管理-新增-记住新增编号D		
+		     		-->A中新建src-src下新建resources文件夹-下新建com文件夹-下新建项目Z名称文件夹-下新建dao文件夹并将main下java下com下项目Z名称下dao中xml拖入其中-将main拖入src中--将解压文件中的sql拖入项目doc文件夹中--打开sql文					件将parent_id对应的值改为D并在数据库中sys_menu栏目SQL中执行一次--进入网页管理--菜单管理选择D下新增菜单点击修改改为有效即刷新页面后可以点击D有执行SQL语句新增的二级菜单
+				-->将项目Z admin framework A中的pom.xml打开并新增module dependency (dependency和overlay)新增模块有war新增api类没有war也无需新增overlay A中只修改对照travel或者shop--全部需要改为对应A名称
+				-->运行项目--进入管理后台页面--点击D下菜单点击弹出B中内容即模块添加成功
+
+tips
+wamp中www/platform是ajax请求paltform特定路由的数据；
+1-@resfd红色字可以alt+enter匹配class
+2-ajax请求跨域问题后台java文件中加 @CrossOrigin(origins = "*", maxAge = 3600)
+3-pom.xml一般都要复制加一个travel的组件
+4-main复制放入src中controller要增加import可以用单击@Controller匹配class（tips-1），entity中import中java.com.Serializable;的com改为io
+5-admin和framework中复制修改成platform-travel-api时注意最下面有没有type标签的war，新建api时都不能有war
+6-在拖动相应文件到main到platform-travel-api中src文件夹并改名后文件内容名字可能出现问题需要看错误提示修改成修改后的文件名进行关联，其中多余的goods文件也要删除
+
+1--安装软件idea java tomcat配置环境变量
+
+
+2--配置idea+tomcat
+
+打开idea选择第四项 checkout outfrom version control-->git-->填入url
+
+打开后点击右上角edit configuration--点击左上角绿色+号
+--tomcat local--configure选择tomcat版本
+--open browser选择默认浏览器--jre选择java版本
+--点击fixed--platform-framework：war exploded--server
+--on update--redeploy--on frame--update resources
+
+数据库中新建paltform--导入platform--doc中platform.sql
+--新建表单machine添加中文备注（显示在网页上）
+
+设置admin--resources--dev--platform.properties设置username+password为admin
+打开wamp运行服务器
+--运行tomcat服务器（点击edit config旁边的播放键旁边的虫图标）到服务器运行成功自动打开网页输入用户名密码（皆为admin）
+
+3--加入travel模块
+
+新建模快travel文件夹（按照shop文件夹模式），文件夹下新建src文件夹，复制pom.xml和platform-shop.iml改shop为travel并文件中shop改为travel
+
+设置gen--resources--template--（menusql，list.html）中shop改为新建模块的名称gen--src--main--java--utils--GenUtils中shop改为travel
+
+设置travel--src--main--java--com.platform中文件参照shop中goods相应文件配置（有错误时运行tomcat会报错提示相应文件出错）entity中com改为io
+platform，admin和framework中pom.xml复制dependencies，overlay（framework），moudule都复制一份改为travel
+
+
+网页中：点击系统管理--代码生成器--选择新建表单名称--生成代码--解压包（main文件夹）放入travel文件夹中src文件夹
+--sql放入platform doc中记事本编辑修改value第一个改为网页中新增模块前的代码，在数据库中sql语句运行一遍
+gen中template中menu.sql也同样修改
+
+
+java文件夹中新建resources将dao中xml文件放入resources com platform dao中
+
+网页中：点击系统管理--菜单管理--新增模块（--二级菜单地址填travel/machine.html）--（对应数据库中相应新建的表单）可在数据库中sysmenu表单查看
+machine_menu.sql文件打开在数据库中SQL执行一次
+
+4--加入platform-travel-api模块（参照platform-api配置）api的用处是给前端对应api文件夹api文件的mapper（路由）下的路径数据对应B的数据 shiro下resources中XML文件打开添加新建api中mapper路径例如/tapi/**=anon（可以通过http://localhost:8080/tapi/machine/listmachine）查看有无数据源
+新建platform-travel-api复制解压的main到其中修改相应名称
+比如api中ApiGoodsController.java修改为ApiMachineController.java其他dao类也如此修改，其中controller要讲@controller改为@Recontroller
+
+platform-shiro.xml中的value要加上不同名字的api路径比如tpai
+
+ApiMachineController.java中的Mapping路径可能重名也要修改
