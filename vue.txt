@@ -1,1 +1,2 @@
 https://github.com/shuiRong/VueCnodeJS
+https://github.com/windlany/mail_list.git
