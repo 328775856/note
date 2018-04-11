@@ -1,0 +1,138 @@
+父组件给子组件传值只需要在父组件引入的子组件上加value 并在子组件加上props：['value']就可以使用：
+APP.vue(父)注册子组件Counter，并定义num值，给子组件传值
+<template>
+    <div>
+        <Counter num="10"></Counter>
+    </div>
+</template>
+
+<script>
+    import Counter from './components/first'
+    export default {
+        data(){
+            return {}
+        },
+        components: {
+            Counter
+        }
+    }
+
+</script>
+
+
+first.vue(子)接收父传的值，使用到props接收值。
+<template>
+    <div>
+        <button @click="increment">+</button>
+        <button @click="decrement">-</button>
+        <p><span>{{num}}</span></p>
+    </div>
+</template>
+
+<script>
+    export default {
+        props: ["num"],
+        data () {
+            return {
+                num: 0,
+            }
+        },
+        methods: {
+            increment(){
+                this.num++;
+            },
+            decrement(){
+                this.num--;
+            }
+        }
+    }
+</script>
+
+
+子组件给父组件传值需使用emit绑定父组件上的函数名：
+
+APP.vue(父)在注册子组件Counter时自定义两个事件(incre和decre),并在增加increment和decrement的方法，说道底就是，父方法创建方法让子组件调用改变
+<template>
+    <div>
+        <Counter v-bind:num="num" v-on:incre="increment" v-on:decre="decrement"></Counter>
+        <p>父:{{num}}</p>
+    </div>
+</template>
+
+<script>
+    import Counter from './components/first'
+    export default {
+        data(){
+            return {
+                //给父默认为10
+                num:10
+            }
+        },
+        components: {
+            Counter
+        },
+        methods:{
+            increment(){
+                this.num++;
+            },
+            decrement(){
+                this.num--;
+            }
+        }
+    }
+
+</script>
+
+//子组件使用$emit调用父组件(注意是事件名)
+<template>
+    <div>
+        <button @click="increment">+</button>
+        <button @click="decrement">-</button>
+        <p><span>{{num}}</span></p>
+    </div>
+</template>
+
+<script>
+    export default {
+        props: ["num"],
+        data () {
+            return {
+                num: 0
+            }
+        },
+        methods: {
+            increment(){
+                this.$emit('incre');
+            },
+            decrement(){
+                this.$emit('decre');
+            }
+        }
+    }
+</script>
+
+template中使用多个div要在外层套一个div要不然会出现错误
+
+const config = require('../config')引用的上层config文件夹中的index.js
+
+invite中class定义了flex-row，flex-col来标记其子元素的排列方式
+
+es6字符串模板，hash值
+
+
+https://www.cnblogs.com/chen110xi/p/4803841.html
+
+1swiper  2滑动页面顶部固定一栏，3tab切换
+
+swiper组件内引入和坑   http://www.jb51.net/article/133652.htm
+gitlab操作             https://www.cnblogs.com/luweiwei/p/4866930.html
+npm命令		       https://blog.csdn.net/slowlifes/article/details/71480610	
+vue-sticky          https://github.com/rguanghui/vue-sticky
+
+
+swiper分页是操作DOM生成的，所以应该在它的CSS style里面不写Scpoed，如果你的组件已经有了一个写过scpoed的style，那可以另写一个style用来设置swiper分页样式。
+真正的答案是启用CSS具名scoped以后，你的swiper分页样式就失效了！因为分页是在mouted里创建的，此时创建的DOM，vue是不会帮你把上面加上scoped自定义属性的！
+
+yike.fm详情页   markdown it插件，js控制多个详情快的加载http://mint-ui.github.io/docs/#/zh-cn2/infinite-scroll
+https://admin.sandbox.yike.fm
+https://free.modao.cc/app/vwxA8K0ajr1cXSEvqJAlRIFTwm2rgHW#screen=s60302F20821521597274931
