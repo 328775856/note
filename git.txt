@@ -50,3 +50,4 @@
  Nickapp  wx33d9f3ae6e87d0e6
  百度地图AK  ooGvQFcbMC0pOLSQIurkiN9eWv4TS4tF
  百度云     nicksun666
+admin.sandbox.yike.fm  mm：nick1008
